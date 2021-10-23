@@ -29,11 +29,18 @@ export class CatsController {
         return 'This actin returns all cats or pattern route';
     }
 
+    // @Get(':id')
+    // findOne(@Param() params) : string{
+    //     console.log(params.id);
+    //     return 'This action returns a #${params.id}'+ params.id +'cat';
+    // }
+
     @Get(':id')
-    findOne(@Param() params) : string{
-        console.log(params.id);
-        return 'This action returns a #${params.id}'+ params.id +'cat';
+    findOne(@Param('id') id: string) : string {
+        return `This action returns a #${id} cat `;
     }
+
+    
 
     @Get()
     @Redirect('https://nestjs.com', 301)
